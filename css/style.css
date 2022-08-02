@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    list-style: none;
+}
+
+h1{
+  margin: 100px;
+  text-align: center;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  
+  background-size: cover;
+  font-family: arial;
+  text-align: center;
+}
+
+/* #menu-h{
+    background-color: rgb(37, 37, 39);
+}
+
+#menu-h ul {
+    max-width: 800px;
+    list-style: none;
+    padding: 0;
+}
+
+#menu-h ul li {
+    display: inline;
+}
+
+#menu-h ul li a {
+    color: #FFF;
+    padding: 20px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background .4s;
+}
+
+#menu-h ul li a:hover {
+    background-color: rgb(24, 139, 233);
+}
+
+#menu-h ul li:last-child a {
+    float: right;
+    background-color:  rgb(24, 139, 233);
+} */
+
+header{
+  width:100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+  box-shadow: 0 0 10px #000;
+  background-color: rgb(24,139,233);
+}
+#chk1{
+  display: none;
+}
+header .logo{
+  flex: 1;
+  color:#fff;
+  text-shadow: 0 0 2px #000;
+  margin-left: 50px;
+}
+header .search-box{
+  flex: 1;
+  position: relative;
+}
+.search-box input{
+  width:100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  background:#444;
+  border-radius: 30px;
+  color:whitesmoke;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 40px;
+}
+.search-box button{
+  cursor: pointer;
+  width:40px;
+  height: 40px;
+  border-radius: 30px;
+  border:none;
+  position: absolute;
+  top:0;
+  right: 0;
+  transform: scale(0.9);
+}
+header ul {
+  flex:2;
+  display: flex;
+  justify-content: space-evenly;
+}
+header ul li{
+  list-style: none;
+}
+header ul li a{
+  text-decoration: none;
+  color:#fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px 15px;
+}
+header ul li a:hover{
+  border-bottom: 2px solid cadetblue;
+}
+header .menu{
+  font-size: 2.5em;
+  display: none;
+}
+@media(max-width:1000px){
+  .search-box button{
+      position: absolute;
+  }
+  header ul{
+      position: fixed;
+      top:100px;
+      right: -100%;
+      background: whitesmoke;
+      height: calc(100vh - 100px);
+      width:50%;
+      flex-direction: column;
+      align-items: center;
+      transition: right 0.5s linear;
+  }
+  header ul li a{
+      color:#000;
+  }
+  header .menu{
+      display: block;
+      width:100px;
+      text-align: center;
+  }
+  #chk1:checked ~ ul{
+      right: 0;
+  }
+
+}
+@media(max-width:600px){
+  header .logo{
+      font-size:12px;
+      margin-left:5px;
+  }
+  header ul{
+      width:100%;
+  }
+}
+
+#section1{
+    height: 700px;
+    display: inline-block;
+    width: 100%;
+}
+
+#section2{
+    height: 700px;
+    display: inline-block;
+    width: 100%;
+}
+
+#section3{
+    height: 700px;
+    display: inline-block;
+    width: 100%;
+}
+
+#section4{
+    height: 700px;
+    display: inline-block;
+    width: 100%;
+}
+
+#section5{
+    height: 700px;
+    display: inline-block;
+    width: 100%;
+}
+   
+ /*  .loginBox {
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 400px;
+    padding: 70px 50px;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+  }
+   
+  .user {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px/2);
+    left: calc(50% - 50px);
+    border: 3px dotted #d2dfe7;
+  }
+   
+  h2 {
+    margin: 0;
+    padding: 0 0 26px;
+    color: #d2dfe7;
+    text-align: center;
+    text-transform: uppercase;
+  }
+   
+   
+  .loginBox input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+   
+  .loginBox input[type="email"],
+  .loginBox input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+   
+  ::placeholder
+  {
+    color: rgba(255, 255, 255, 0.5);
+  }
+   
+  .loginBox input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #eee;
+    font-size: 16px;
+    background-color: rgb(24, 139, 233);
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 12px 0 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+   
+  .loginBox input[type="submit"]:hover {
+    background-color: rgb(72, 164, 240);
+    color: #fff;
+  }
+   
+  .loginBox a {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    
+  } */
+
+  .login-html a{
+    text-decoration: none;
+    color:#fff;
+}
+/* body{
+    margin:0;
+    color:#6a6f8c;
+    background:#c8c8c8;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    font-family: arial;
+} */
+
+.login-wrap{
+    width:100%;
+    margin:auto;
+    max-width:450px;
+    min-height:590px;
+    position:relative;
+    background:url(tech.jpg) no-repeat center;
+    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+    border-radius: 20px;
+}
+
+.login-html{
+    width:100%;
+    height:100%;
+    position:absolute;
+    padding:50px;
+    background:rgba(40,57,101,.9);
+    border-radius: 20px;
+     
+     
+}
+
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    position:absolute;
+    transform:rotateY(180deg);
+    backface-visibility:hidden;
+    transition:all .4s linear;
+     
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+    display:none;
+}
+
+.login-html .tab{
+    font-size:20px;
+    padding: 10px;
+    display: inline-block;
+    border-bottom:2px solid transparent;
+    margin-bottom: 20px;
+    text-align: center;
+     
+    font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+
+     
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+    color:#fff;
+    border-color:#1161ee;
+     
+}
+.login-form{
+    min-height:345px;
+    position:relative;
+   perspective:1000px;
+    transform-style:preserve-3d;
+}
+.login-form .group{
+    margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+    width:100%;
+    color:#fff;
+    display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+    border:none;
+    padding:15px 20px;
+    border-radius:25px;
+    background:rgba(255,255,255,.1);
+     
+     
+}
+.input::placeholder{
+    color: rgb(228, 178, 178);
+
+}
+:focus {
+  outline: none;
+     
+}
+
+.login-form .group .button{
+    background:#1161ee;
+    cursor: pointer;
+}
+.login-form .group label .icon{
+    width:15px;
+    height:15px;
+    border-radius:2px;
+    position:relative;
+    display:inline-block;
+    background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+    content:'';
+    width:10px;
+    height:2px;
+    background:#fff;
+    position:absolute;
+    transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+    left:3px;
+    width:5px;
+    bottom:6px;
+    transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+    top:6px;
+    right:0;
+    transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+    color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+    background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+    transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+    transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+            transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+            transform:rotate(0);
+}
+
+.hr{
+    height:2px;
+    margin:60px 0 50px 0;
+    background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+    text-align:center;
+    color:orange;
+
+}
+.foot-lnk span{
+    cursor: pointer;
+}
+
+/*veio do estilo.css*/
+.estrelas input[type=radio]{
+	display: none;
+}.estrelas label i.fa:before{
+	content: '\f005';
+	color: #FC0;
+}.estrelas  input[type=radio]:checked  ~ label i.fa:before{
+	color: #CCC;
+}
+/*até aqui*/
+
+/*veio do estilo.css da pasta site_receitas*/
+.hide {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.hide2 {
+    display: none;
+  }
+/*até aqui*/
+
+ul li.dropdown:hover ul.dropdown-menu
+{ 
+    display: block; 
+}
